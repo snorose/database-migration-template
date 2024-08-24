@@ -7,6 +7,7 @@ from database import Base
 
 """
 실제 db table과 일치하는 형태의 model을 구성해주세요
+아래는 예시입니다
 """
 
 

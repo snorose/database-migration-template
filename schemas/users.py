@@ -3,6 +3,11 @@ from datetime import datetime, date
 from pydantic import BaseModel, model_validator
 
 
+"""
+실제 db table과 일치하는 형태의 schema를 구성해주세요
+아래는 예시입니다
+"""
+
 class UserSchema(BaseModel):
     created_at: datetime
     updated_at: datetime
@@ -23,6 +28,7 @@ class UserSchema(BaseModel):
     is_blacklist: bool
     point_balance: int
 
+    # 이 함수는 그대로 복사해서 가져가주세요
     @model_validator(mode="before")
     def null_filter(cls, values: dict) -> dict:
         for key, value in values.items():

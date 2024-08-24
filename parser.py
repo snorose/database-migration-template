@@ -34,7 +34,7 @@ class DataParser:
             new_nickname = f"test - {data[7]}"
 
             # 스키마에 각 데이터를 넣어줍니다
-            model = UserSchema(
+            schema = UserSchema(
                 created_at=data[0],
                 updated_at=data[1],
                 birthday=data[2],
@@ -56,7 +56,7 @@ class DataParser:
             )
 
             # 만들어진 스키마는 리스트에 저장됩니다
-            parsed_data.append(model)
+            parsed_data.append(schema)
 
         return parsed_data
 
