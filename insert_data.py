@@ -18,10 +18,14 @@ class Service:
 
         while count <= len(schemas):
             print(f"Insert Data {count} ~ {count + BATCH_SIZE - 1}")
+            try:
+                insert_data = [schema.dict() for schema in schemas[count: count + BATCH_SIZE]]
+                self.session.bulk_insert_mappings(Users, insert_data)       # 첫번째 인자는 생성한 model을 입력해주세요. 두번째 인자는 건드리지 않아도 됩니다
 
-            insert_data = [schema.dict() for schema in schemas[count: count + BATCH_SIZE]]
-            self.session.bulk_insert_mappings(Users, insert_data)
-
-            self.session.flush()
+                self.session.flush()
+            except Exception as e:
+                print(f"!!!!!!!!!!!!!!!!!!ERROR!!!!!!!!!!!!!!!!!!!!!")
+                print(f"{count} ~ {count + BATCH_SIZE - 1}에서 오류가 발생했습니다")
+                print(e)
 
             count += BATCH_SIZE

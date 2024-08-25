@@ -1,3 +1,12 @@
+## 환경
+python 3.11
+sqlalchemy 2.0.32 : python에서 사용하는 DBMS
+pydantic 2.8.2 : 데이터 parsing 라이브러리
+
+## 실행 방법
+1. `pip install -r requirements.txt` 명령어를 입력해서 필요한 라이브러리 설치
+2. `python main.py` 로 마이그레이션 실행
+
 ## 템플릿 사용법
 
 1. `database.py` 안에 데이터베이스 정보를 설정합니다
@@ -22,4 +31,5 @@
 6. `main.py` 파일 내에 파일명을 수정해주세요
     - csv_files에 넣은 파일명을 넣어주면 됩니다
 
-7. (필요할 경우)`insert_data.py` 파일에서는 대량의 데이터를 100개 단위로 끊어 bulk insert를 해줍니다. 이 100이라는 값을 수정하고 싶다면 `BATCH_SIZE`를 수정해주세요 
+7. `insert_data.py` 파일 내에 `bulk_insert_mappings` 첫번째인자로 2번에서 만든 모델을 넣어주세요
+   - (필요할 경우)`insert_data.py` 파일에서는 대량의 데이터를 100개 단위로 끊어 bulk insert를 해줍니다. 이 100이라는 값을 수정하고 싶다면 `BATCH_SIZE`를 수정해주세요
