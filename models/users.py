@@ -14,7 +14,7 @@ from database import Base
 class Users(Base):
     __tablename__ = 'users'     # db table명
 
-    id = Column(BigInteger, primary_key=True)    # id는 직접 작성하지 않는다면 생략
+    id = Column(BigInteger, primary_key=True)   # primary_key
     created_at = Column(DateTime, nullable=False)   # nullable이 False인 경우 파라미터 전달
     updated_at = Column(DateTime)
     birthday = Column(Date, nullable=False)

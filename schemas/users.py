@@ -9,6 +9,8 @@ from pydantic import BaseModel, model_validator
 """
 
 class UserSchema(BaseModel):
+    # id는 직접 넣지 않는다면 생략해도 됩니다 (auto increment 됨)
+
     created_at: datetime
     updated_at: datetime
     birthday: date
