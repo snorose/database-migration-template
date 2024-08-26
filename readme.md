@@ -1,11 +1,13 @@
 ## 환경
-python 3.11
-sqlalchemy 2.0.32 : python에서 사용하는 DBMS
-pydantic 2.8.2 : 데이터 parsing 라이브러리
+python 3.11<br>
+sqlalchemy 2.0.32 : python에서 사용하는 DBMS<br>
+pydantic 2.8.2 : 데이터 parsing 라이브러리<br>
+<br><br>
 
 ## 실행 방법
 1. `pip install -r requirements.txt` 명령어를 입력해서 필요한 라이브러리 설치
 2. `python main.py` 로 마이그레이션 실행
+<br><br>
 
 ## 템플릿 사용법
 
